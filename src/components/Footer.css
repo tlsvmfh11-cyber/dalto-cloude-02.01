@@ -1,0 +1,24 @@
+.footer {
+  background: #09090f;
+  border-top: 1px solid var(--border);
+  padding: 40px 0 32px;
+}
+.footer__inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.footer__logo {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--gold);
+}
+.footer__addr {
+  font-style: normal;
+}
+.footer__addr, .footer__biz, .footer__copy {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}

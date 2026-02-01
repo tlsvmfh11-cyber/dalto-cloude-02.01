@@ -1,0 +1,44 @@
+.contact__inner {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto;
+}
+.contact__inner h2 {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+.contact__desc {
+  font-size: 1rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+.contact__btns {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.contact__info {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.contact__info p {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+}
+.contact__info strong {
+  display: inline-block;
+  width: 48px;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .contact__btns .btn { width: 100%; }
+}
