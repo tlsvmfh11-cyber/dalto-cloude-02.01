@@ -1,0 +1,22 @@
+.foryou__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.foryou__card h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-bright);
+  margin-bottom: 10px;
+}
+.foryou__card p {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  line-height: 1.75;
+}
+
+@media (max-width: 768px) {
+  .foryou__grid { grid-template-columns: 1fr; }
+}

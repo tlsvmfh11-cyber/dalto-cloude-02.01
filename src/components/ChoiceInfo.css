@@ -1,0 +1,20 @@
+.choice__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.choice__card h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.choice__card p {
+  font-size: 0.92rem;
+  color: var(--text-dim);
+  line-height: 1.75;
+}
+
+@media (max-width: 768px) {
+  .choice__grid { grid-template-columns: 1fr; }
+}

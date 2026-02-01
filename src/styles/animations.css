@@ -1,0 +1,202 @@
+/* ============================================
+   애니메이션 시스템
+   ============================================
+   - GPU 가속: transform + opacity만 사용
+   - prefers-reduced-motion 대응
+   - 모바일 성능 최우선
+   ============================================ */
+
+/* ── Hero 진입 애니메이션 ── */
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero__badge {
+  animation: fadeSlideDown 0.7s ease-out both;
+  animation-delay: 0.1s;
+}
+
+.hero__title {
+  animation: fadeSlideUp 0.8s ease-out both;
+  animation-delay: 0.25s;
+}
+
+.hero__sub {
+  animation: fadeSlideUp 0.8s ease-out both;
+  animation-delay: 0.5s;
+}
+
+.hero__points {
+  animation: fadeSlideUp 0.7s ease-out both;
+  animation-delay: 0.7s;
+}
+
+.hero__cta {
+  animation: fadeSlideUp 0.7s ease-out both;
+  animation-delay: 0.9s;
+}
+
+
+/* ── 키워드 강조: 골드 시머(shimmer) ── */
+
+@keyframes goldShimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.keyword-glow {
+  background: linear-gradient(
+    90deg,
+    var(--gold) 0%,
+    #f0d68a 40%,
+    var(--gold) 60%,
+    var(--gold-dim) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: goldShimmer 3.5s ease-in-out infinite;
+}
+
+
+/* ── CTA 버튼 골드 글로우 ── */
+
+.btn--gold {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.35s ease;
+}
+
+.btn--gold::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at center,
+    rgba(212, 168, 83, 0.5) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.btn--gold:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 6px 32px rgba(212, 168, 83, 0.45),
+    0 0 20px rgba(212, 168, 83, 0.2);
+}
+
+.btn--gold:hover::after {
+  opacity: 1;
+}
+
+.btn--outline {
+  transition: transform 0.25s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn--outline:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 20px rgba(212, 168, 83, 0.15);
+}
+
+
+/* ── 스크롤 등장 애니메이션 ── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 카드/아이템 순차 등장용 딜레이 */
+.reveal--d1 { transition-delay: 0.08s; }
+.reveal--d2 { transition-delay: 0.16s; }
+.reveal--d3 { transition-delay: 0.24s; }
+.reveal--d4 { transition-delay: 0.32s; }
+.reveal--d5 { transition-delay: 0.40s; }
+
+/* 좌→우 슬라이드 변형 */
+.reveal--left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal--left.reveal--visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* ── 섹션 구분선 페이드 ── */
+
+.section-head h2 {
+  position: relative;
+}
+
+.section-head h2::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--gold);
+  margin: 14px auto 0;
+  opacity: 0.5;
+  border-radius: 2px;
+}
+
+
+/* ── 접근성: 모션 감소 모드 ── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .keyword-glow {
+    animation: none;
+    -webkit-text-fill-color: var(--gold);
+  }
+}

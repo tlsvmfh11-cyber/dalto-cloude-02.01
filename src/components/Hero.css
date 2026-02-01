@@ -1,0 +1,72 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('/images/hero.jpg') center/cover no-repeat,
+              linear-gradient(135deg, #0d0d14 0%, #16162a 100%);
+}
+.hero__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(13,13,20,0.72) 0%, rgba(13,13,20,0.88) 100%);
+}
+.hero__content {
+  position: relative; z-index: 1;
+  text-align: center;
+  padding: 130px 20px 90px;
+}
+.hero__badge {
+  display: inline-block;
+  background: var(--gold-glow);
+  border: 1px solid rgba(212,168,83,0.35);
+  color: var(--gold);
+  padding: 7px 20px;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 22px;
+}
+.hero__title {
+  font-size: 3.4rem;
+  font-weight: 800;
+  color: var(--text-bright);
+  margin-bottom: 18px;
+  letter-spacing: -1px;
+}
+.hero__sub {
+  font-size: 1.1rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+.hero__points {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 36px;
+  list-style: none;
+}
+.hero__points li {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  color: var(--text);
+}
+.hero__cta {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .hero__content { padding: 110px 16px 70px; }
+  .hero__title { font-size: 2.2rem; }
+  .hero__sub { font-size: 0.98rem; }
+  .hero__cta .btn { width: 100%; max-width: 280px; }
+}
