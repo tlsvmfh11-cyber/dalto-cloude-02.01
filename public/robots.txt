@@ -2,4 +2,13 @@ User-agent: *
 Allow: /
 Disallow: /assets/
 
-Sitemap: https://gangnam-dalto.com/sitemap.xml
+User-agent: Googlebot
+Allow: /
+
+User-agent: Yeti
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://daltomingu.com/sitemap.xml
