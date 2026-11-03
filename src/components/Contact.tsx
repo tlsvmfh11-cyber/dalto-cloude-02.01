@@ -13,15 +13,15 @@ const Contact = () => (
           </p>
 
           <div className="contact__btns">
-            <a href="tel:01023033778" className="btn btn--gold" aria-label="강남 달토 전화 예약 010-2303-3778">
-              전화 예약 · 010-2303-3778
+            <a href="tel:01074036998" className="btn btn--gold" aria-label="강남 달토 전화 예약 010-7403-6998">
+              전화 예약 · 010-7403-6998
             </a>
           </div>
 
           <address className="contact__info">
-            <p><strong>위치</strong> 서울 강남구 강남대로 OOO길 OO, OO빌딩 B1</p>
+            <p><strong>위치</strong> 서울 강남구 역삼동 604-11 삼정호텔 달토</p>
             <p><strong>영업</strong> 24시간 연중무휴</p>
-            <p><strong>상담</strong> 24시간 연중무휴 (전화)</p>
+            <p><strong>상담</strong> 24시간 연중무휴 (010-7403-6998)</p>
           </address>
         </div>
       </RevealSection>

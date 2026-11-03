@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /assets/
 
 User-agent: Googlebot
 Allow: /
@@ -9,6 +8,18 @@ User-agent: Yeti
 Allow: /
 
 User-agent: Bingbot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
 Allow: /
 
 Sitemap: https://daltomingu.com/sitemap.xml

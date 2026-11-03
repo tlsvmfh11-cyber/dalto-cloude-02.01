@@ -24,7 +24,7 @@ const Header = () => {
           <a href="#price" onClick={close}>가격</a>
           <a href="#rooms" onClick={close}>시설</a>
           <a href="#faq" onClick={close}>FAQ</a>
-          <a href="tel:01023033778" className="hdr__cta" onClick={close} aria-label="전화 예약 010-2303-3778">전화 예약</a>
+          <a href="tel:01074036998" className="hdr__cta" onClick={close} aria-label="전화 예약 010-7403-6998">전화 예약</a>
         </nav>
 
         <button
